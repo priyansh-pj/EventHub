@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'WanderBrave';
+    src: url('/static/style/font/WanderBrave.ttf') format('truetype')
+}
+.navbar{
+    background-color: #FF2400 !important;
+    color: #DDE6ED;
+}
+.fixed-card-size {
+        height: 400px;
+        width: 18rem;
+    }
+.card-button {
+        margin-top: auto;
+        margin-bottom: 1rem;
+        width: 100%;
+}

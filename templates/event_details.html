@@ -1,0 +1,15 @@
+{% extends 'header.html' %}
+{% block title %}
+    {{ title }} |
+{% endblock %}
+
+{% block content %}
+    <img src="{{ events.image.url }}" style="height:600px; width:auto;">
+    <br>
+    <strong>{{ events.name }}</strong>
+    <p>{{ events.description }}</p>
+    {% if events.Time %} {{ events.Time }} {% endif %}
+    <br>
+    <a class="btn btn-danger" href="{% url 'Delete_Event' events.id %}">Delete</a>
+    <a class="btn btn-warning" href="{% url 'Edit_Event' events.id %}">Edit</a>
+{% endblock %}
