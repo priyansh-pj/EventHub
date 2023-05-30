@@ -7,7 +7,9 @@ def event_list(request):
         "title": 'events List',
         "events": Event.objects.filter(status=True)
     }
-    return render(request, 'event_list.html', view_data)
+    print(request.user.is_authenticated)
+
+    return render(request, 'event/event_list.html', view_data)
 
 
 def event_details(request, id):
@@ -15,7 +17,7 @@ def event_details(request, id):
         "title": 'events Info',
         "events": Event.objects.get(id=id)
     }
-    return render(request, 'event_details.html', view_data)
+    return render(request, 'event/event_details.html', view_data)
 
 
 def create_event(request):
@@ -30,7 +32,7 @@ def create_event(request):
         if forms.is_valid():
             forms.save()
             return redirect('Event_List')
-    return render(request, 'create_event.html', view_data)
+    return render(request, 'event/create_event.html', view_data)
 
 
 def delete_event(request, id):
@@ -52,4 +54,4 @@ def edit_event(request, id):
             forms.save()
             return redirect('Event_List')
 
-    return render(request, 'edit_event.html', view_data)
+    return render(request, 'event/edit_event.html', view_data)
